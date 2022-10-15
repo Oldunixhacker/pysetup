@@ -7,7 +7,7 @@ PySetup works by converting the `.py` script into one binary, containing librari
 
 ## Features
 
-* Extensible via Python scripting, allowing implementation of additional files, custom pages.
+* Extensible via Python scripting, allowing implementation of additional files, custom pages, and more.
   Custom themes will be added soon.
 * Apps are compiled into a single binary, so PySetup supports systems with or without Python.
    * Windows programs are compiled into `.exe` files. Darwin and Linux kernel programs are
@@ -33,7 +33,7 @@ Download the PySetup Toolkit via one of these methods:
   software for any operating system. GitHub Releases is the main host for PySetup. It is recommended
   to download PySetup through GitHub Releases.
   
-  [**Download through GHR...**](https://github.com/TylerMS887/pySetup/releases/latest)
+  [**Download through GHR...**](https://github.com/TylerMS887/pysetup/releases/latest)
 
 * **GitHub Actions**: If you would like to test nightly builds of PySetup, download the PySetup toolkit through
   GitHub Actions. Just scroll to "Artifacts" and download the binary for your OS. (For FreeBSD, PySetup works
@@ -44,7 +44,7 @@ Download the PySetup Toolkit via one of these methods:
   [**Login to GitHub...**](https://github.com/login)
   
   After logging in, download the binary:</br>
-  [**Download through GHA...**](https://github.com/TylerMS887/pySetup/actions)
+  [**Download through GHA...**](https://github.com/TylerMS887/pysetup/actions)
 
 We are going to create a new project folder, to ensure the current directory is not messed up:
 
