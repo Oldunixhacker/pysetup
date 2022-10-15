@@ -3,19 +3,27 @@
 PySetup is a setup program for Python scripts.
 
 PySetup works by converting the `.py` script into one binary, containing libraries
-(DLLs/Shared Libraries/Python Packages),
+(DLLs/Shared Libraries/Python Packages), which can fit into one setup program.
 
 ## Features
 
-* Extensible via Python scripting, allowing implementation of additional files, custom pages. Themes will be added soon.
+* Extensible via Python scripting, allowing implementation of additional files, custom pages.
+  Custom themes will be added soon.
 * Apps are compiled into a single binary, so PySetup supports systems with or without Python.
    * Windows programs are compiled into `.exe` files. Darwin and Linux kernel programs are
      compiled into a basic binary for the program itself, while the setup tool is compiled into
      an AppImage (`.dmg`, `.deb` and `.rpm` packages can also be built).
-* DLLs (Win32 libraries) and shared objects (Unix libraries) are packed automatically. On GNU/Linux, it is enabled
-  by default if no X11 server can be found.
-* Command-line installer is available to install programs on a server.
+* DLLs (Win32 libraries) and shared objects (Unix libraries) are packed automatically.
+* Command-line installer is available to install programs on a server. On GNU/Linux, it is enabled
+  by default if no X11 display can be found.
 * Automatically packs your modules.
+
+## Disadvantages
+
+* No native Wayland support.
+   * It will by overcome be a very long time for Tk to get native Wayland
+     support (possibly, **never**.) For now, you can fork the PySetup project and
+     use a Wayland-capable GUI toolkit for that fork.
 
 ## Generation
 
@@ -85,17 +93,19 @@ To test the installer GUI, execute the following command:
 ```
 $ pysetup run
 Creating install script...
+Interpreting install script...
            --------- PySetup 1.0 ---------
  You are in GUI mode. Only exceptions and logs are printed
  here in the GUI mode.
-   
- Use the newly created window to
+ 
+ Use the newly created window to complete the install form.
 ```
 
 To test the installer CLI, execute the following command:
 
 ```
 $ pysetup run --cli
+Creating install script...
 [screen clear]
 My script Setup                                          Version: 1.0
 ---------------------------------------------------------------------
