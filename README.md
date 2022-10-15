@@ -38,7 +38,7 @@ Download the PySetup Toolkit via one of these methods:
   After logging in, download the binary:</br>
   [**Download through GHA...**](https://github.com/TylerMS887/pySetup/actions)
 
-We are going to create a new project, to ensure the current directory is not messed up:
+We are going to create a new project folder, to ensure the current directory is not messed up:
 
 ```
 mkdir ~/pysetup-example
@@ -54,7 +54,9 @@ echo 'print("Hello World from PySetup!")' >> hello.py
 To create the project configuration file, which is needed to generate an installer program, run this command:
 
 ```
-pysetup ensureconfig
+$ pysetup ensureconfig
+Project configuration has been created.
+
 ```
 
 A new file called `pysetup_project.yaml` will be created. It contains metadata for your setup program:
@@ -75,23 +77,62 @@ conditions:
 
 appearance:
   theme: pysetup # pysetup or tk. pysetup is the PySetup modern theme while tk is the 10-year-old-looking
-                 # theme that comes with Tcl/Tk.
+                 # theme that comes with Tcl/Tk. Does not take effect in the command-line installer.
 ```
 
 To test the installer GUI, execute the following command:
 
 ```
-pysetup run
+$ pysetup run
+Creating install script...
+           --------- PySetup 1.0 ---------
+ You are in GUI mode. Only exceptions and logs are printed
+ here in the GUI mode.
+   
+ Use the newly created window to
 ```
 
 To test the installer CLI, execute the following command:
 
 ```
-pysetup run --cli
+$ pysetup run --cli
+[screen clear]
+My script Setup                                          Version: 1.0
+---------------------------------------------------------------------
+Select your language. This language will be used during
+the installation.
+
+Use the arrow keys to select an option. Press Enter to start
+installing My script.
+
+   ____________________________________________________________
+  | Select Language                                         [X]|
+  |------------------------------------------------------------|
+  | > English                                                  |
+  '____________________________________________________________'
 ```
 
 To generate the `hello.py` installer, execute the following command:
 
 ```
-pysetup package --script hello.py --name "My Script"
+$ pysetup package
+     ------- [Packaging Script] -------
+Converting script into .PYZ...
+Packaging script for Windows...
+Packaging script for Mac/Linux (AppImage)...
+     -------- [Adding PySetup] --------
+Creating install script...
+Packaging installer for Windows...
+  > Installer: myscript-1.0.exe
+Packaging installer for Mac/Linux (AppImage)...
+  > Installer:   mac/MyScript-v1.0-Installer.AppImage
+               linux/MyScript-v1.0-Installer.AppImage
+
+Warning for Mac testing: There is no cheap Mac in Earth. All Macs
+cost more than $100/£100. Same for MacBooks and most other Apple products.
+If you don't have enough money for a Mac or MacBook, you must setup a
+Hackintosh, which takes hours to set up and the worst part of it - it's illegal
+in a lot of countries.
+
+                  Packaging complete!
 ```
