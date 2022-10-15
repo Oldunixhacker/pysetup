@@ -22,7 +22,7 @@ PySetup works by converting the `.py` script into one binary, containing librari
 
 * No native Wayland support.
    * It will by overcome be a very long time for Tk to get native Wayland
-     support (possibly, **never**.) For now, you can fork the PySetup project and
+     support (possibly, **never**). For now, you can fork the PySetup project and
      use a Wayland-capable GUI toolkit for that fork.
 
 ## Generation
