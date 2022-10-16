@@ -1,0 +1,34 @@
+name: Update copyright year in license file
+
+on:
+  schedule:
+    - cron: '0 0 1 1 *'
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone project
+        uses: actions/checkout@v2
+
+      - name: Update license year
+        uses: p3lim/license-year-updater@v1
+        with:
+          files: LICENSE
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: Keep license year up-to-date
+          body: |
+            The time has come to say goodbye to last year.
+            
+            But not just that.
+            
+            It's also time to update license years.
+            
+            This pull request has automatically been created to keep the license up to date.
+          commit-message: Happy New Year!
+          branch: hnw-updates
+          delete-branch: true
