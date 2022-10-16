@@ -16,11 +16,12 @@ jobs:
         uses: p3lim/license-year-updater@v1
         with:
           files: LICENSE
-
-      - name: Apply changes
-        uses: swinton/commit@v2.0.0
+      - name: Simple commit
+        uses: zwaldowski/git-commit-action@v1
         with:
-         # Newline-separated list of files to be committed, relative to root of repository.
-         files: LICENSE
-         # Commit message to be used
-         commit-message: Happy new year
+          # Directory to create commit in
+          working_directory: ${GITHUB_WORKSPACE} # optional, default is .
+          # Commit message
+          commit_message: Update license year # default is Automated commit
+          # Name to use for commit author
+          author_name: Automated license updater # optional, default is GitHub Actions
