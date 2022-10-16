@@ -6,7 +6,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  run:
+  license-year:
+    name: Preform license modification
     runs-on: ubuntu-latest
     steps:
       - name: Clone project
@@ -16,10 +17,12 @@ jobs:
         uses: p3lim/license-year-updater@v1
         with:
           files: LICENSE
-      - name: Simple commit
+      - name: Commit changes to Git
         uses: zwaldowski/git-commit-action@v1
         with:
           # Commit message
           commit_message: Update license year # default is Automated commit
           # Name to use for commit author
           author_name: Automated license updater # optional, default is GitHub Actions
+      - name: Apply license
+        run: git push
