@@ -17,18 +17,10 @@ jobs:
         with:
           files: LICENSE
 
-      - name: Create pull request
-        uses: peter-evans/create-pull-request@v3
+      - name: Apply changes
+        uses: swinton/commit@v2.0.0
         with:
-          title: Keep license year up-to-date
-          body: |
-            The time has come to say goodbye to last year.
-            
-            But not just that.
-            
-            It's also time to update license years.
-            
-            This pull request has automatically been created to keep the license up to date.
-          commit-message: Happy New Year!
-          branch: hnw-updates
-          delete-branch: true
+         # Newline-separated list of files to be committed, relative to root of repository.
+         files: LICENSE
+         # Commit message to be used
+         commit-message: Happy new year
