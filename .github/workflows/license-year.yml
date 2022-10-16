@@ -20,7 +20,7 @@ jobs:
         uses: zwaldowski/git-commit-action@v1
         with:
           # Directory to create commit in
-          working_directory: ${GITHUB_WORKSPACE} # optional, default is .
+          working_directory: ${{GITHUB_WORKSPACE}} # optional, default is .
           # Commit message
           commit_message: Update license year # default is Automated commit
           # Name to use for commit author
