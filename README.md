@@ -178,5 +178,5 @@ Warning for Mac testing: This platform is not Darwin-based. If you don't have
                          create directly packaged macOS programs, unless the program will
                          be installed through Homebrew.
 
-                  Packaging complete!
+Packaging complete!
 ```
