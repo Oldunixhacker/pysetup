@@ -112,17 +112,17 @@ To test the installer GUI, execute the following command:
 $ pysetup run
 Creating install script...
 Interpreting install script...
-           --------- PySetup 1.0 ---------
- You are in GUI mode. Only exceptions and logs are printed
- here in the GUI mode.
- 
- Use the newly created window to complete the install form.
+You are in GUI mode. Only exceptions and logs are printed
+here in the GUI mode.
+
+Use the newly created window to complete the install form.
+Add the --cli option to the runtime to use the TUI.
 ```
 
-To test the installer CLI, execute the following command:
+To test the installer TUI (useful for servers), execute the following command:
 
 ```
-$ pysetup run --cli
+$ pysetup run --tui
 Creating install script...
 [screen clear]
 My script Setup                                          Version: 1.0
@@ -144,6 +144,18 @@ To generate the `hello.py` installer, execute the following command:
 
 ```
 $ pysetup package
+Build Platform: GNU
+
+You will need:
+  * An installer project, use pysetup ensureconfig to setup the project
+
+It is recommended that you have:
+  * WINE, in order to build the Windows installer. Windows programs cannot
+    be easily compiled by Linux, so WINE will be used to build the
+    Windows installer.
+
+Ready to build (y/n)?
+
      ------- [Packaging Script] -------
 Converting script into .PYZ...
 Packaging script for Windows...
@@ -156,11 +168,15 @@ Packaging installer for Mac/Linux (AppImage)...
   > Installer:   mac/MyScript-v1.0-Installer.AppImage
                linux/MyScript-v1.0-Installer.AppImage
 
-Warning for Mac testing: There is no cheap Mac in Earth. All Macs
-cost more than $100/£100. Same for MacBooks and most other Apple products.
-If you don't have enough money for a Mac or MacBook, you must setup a
-Hackintosh, which takes hours to set up and the worst part of it - it's illegal
-in a lot of countries.
+Warning for Mac testing: This platform is not Darwin-based. If you don't have
+                         enough money for a Mac or MacBook, you must setup a Hackintosh,
+                         which takes long to set up and the worst part of it - it's illegal
+                         in a lot of countries. If not, do not offer macOS support for your
+                         app.
+                         
+                         Also note that you need to have a very huge amount of money to
+                         create directly packaged macOS programs, unless the program will
+                         be installed through Homebrew.
 
                   Packaging complete!
 ```
