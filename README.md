@@ -102,7 +102,7 @@ conditions:
   linux_kernel_minver: 4.0 # Minimum Linux kernel version
 
 appearance:
-  theme: pysetup # pysetup or tk. pysetup is the PySetup modern theme while tk is the 10-year-old-looking
+  theme: pysetup # pysetup or tk. pysetup is the PySetup modern theme while tk is the old-looking
                  # theme that comes with Tcl/Tk. Does not take effect in the command-line installer.
 ```
 
