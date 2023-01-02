@@ -95,7 +95,7 @@ info:
   app_publisher: My Company, Inc.
 
 files:
-  script: 
+  script: "hello.py"
 
 conditions:
   windows_minver: 10.20h2 # Windows 8.1/Server 2012 to Windows 11/Server 2022
